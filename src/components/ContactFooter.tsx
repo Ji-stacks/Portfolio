@@ -314,7 +314,7 @@ export default function ContactFooter() {
       <footer className="relative border-t border-neutral-100 bg-white/60 backdrop-blur-sm z-10">
         <div className="max-w-6xl mx-auto px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-neutral-400">
           <p>
-            <span className="font-black text-black tracking-tight">Tonyo</span>
+            <span className="font-black text-black tracking-tight">Antonio</span>
             <span className="text-violet-500">.</span>
             {" "}— Software Engineer · BSCS
           </p>
@@ -324,7 +324,7 @@ export default function ContactFooter() {
             <span className="text-black font-semibold">Tailwind CSS</span> &amp;{" "}
             <span className="text-black font-semibold">Framer Motion</span>
           </p>
-          <p>© {new Date().getFullYear()} Tonyo. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Ji. All rights reserved.</p>
         </div>
       </footer>
     </>
