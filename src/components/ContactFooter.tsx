@@ -255,7 +255,7 @@ export default function ContactFooter() {
               <div className="flex items-center gap-4">
                 <a
                   id="link-github"
-                  href="https://github.com/"
+                  href="https://github.com/Ji-stacks"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="GitHub Profile"
@@ -269,7 +269,7 @@ export default function ContactFooter() {
 
                 <a
                   id="link-linkedin"
-                  href="https://linkedin.com/in/"
+                  href="https://www.linkedin.com/in/atn107/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn Profile"
@@ -283,12 +283,12 @@ export default function ContactFooter() {
               </div>
 
               {/* Resume download */}
-              <motion.a
+              {/* Resume download */}
+              {/* Resume download (Nuclear Option using JavaScript) */}
+              <button
                 id="btn-download-resume"
-                href="/resume.pdf"
-                download
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
+                onClick={() => window.open("/Antonio-Tenegra-CV.pdf", "_blank")}
+                type="button"
                 className="group relative inline-flex items-center gap-3 px-6 py-3.5 rounded-xl border-2 border-black bg-white font-bold text-sm text-black tracking-wide overflow-hidden hover:bg-black hover:text-white transition-all duration-300 w-fit"
               >
                 <DownloadIcon className="w-4 h-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 duration-200" />
@@ -296,7 +296,7 @@ export default function ContactFooter() {
                 <span className="px-2 py-0.5 rounded-md bg-violet-100 text-violet-700 text-[10px] font-black border border-violet-200 group-hover:bg-violet-700 group-hover:text-white group-hover:border-violet-700 transition-all duration-200">
                   PDF
                 </span>
-              </motion.a>
+              </button>
             </motion.div>
 
             {/* Right column: form */}
