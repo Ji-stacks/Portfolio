@@ -141,7 +141,7 @@ function SpotlightCard({
       />
 
       {/* Card body */}
-      <div className="relative h-full rounded-3xl border border-neutral-200 bg-white/80 backdrop-blur-sm p-8 overflow-hidden flex flex-col transition-all duration-500 group-hover:border-violet-300 group-hover:shadow-xl group-hover:shadow-violet-100">
+      <div className="relative h-full rounded-3xl border border-neutral-200 bg-white/80 dark:bg-neutral-900/80 dark:border-neutral-800 backdrop-blur-sm p-8 overflow-hidden flex flex-col transition-all duration-500 group-hover:border-violet-300 group-hover:shadow-xl group-hover:shadow-violet-100">
         {/* Background glow blob */}
         <div
           className={cn(
@@ -167,7 +167,7 @@ function SpotlightCard({
         </div>
 
         {/* Title */}
-        <h3 className="text-2xl font-black tracking-tight text-black mb-2 leading-tight">
+        <h3 className="text-2xl font-black tracking-tight text-black dark:text-white mb-2 leading-tight">
           {project.title}
         </h3>
 
@@ -177,15 +177,15 @@ function SpotlightCard({
         </p>
 
         {/* Description */}
-        <p className="text-neutral-500 text-sm leading-relaxed mb-6 flex-grow">
+        <p className="text-neutral-500 dark:text-neutral-400 text-sm leading-relaxed mb-6 flex-grow">
           {project.description}
         </p>
 
         {/* Highlights */}
         <ul className="space-y-2 mb-6">
           {project.highlights.map((h, i) => (
-            <li key={i} className="flex items-start gap-2 text-xs text-neutral-600">
-              <span className="mt-0.5 w-4 h-4 rounded-full bg-violet-100 text-violet-600 flex items-center justify-center flex-shrink-0 text-[10px] font-bold">
+            <li key={i} className="flex items-start gap-2 text-xs text-neutral-600 dark:text-neutral-400">
+              <span className="mt-0.5 w-4 h-4 rounded-full bg-violet-100 dark:bg-violet-900/50 text-violet-600 dark:text-violet-300 flex items-center justify-center flex-shrink-0 text-[10px] font-bold">
                 ✓
               </span>
               {h}
@@ -198,7 +198,7 @@ function SpotlightCard({
           {project.tags.map((tag, i) => (
             <span
               key={i}
-              className="px-3 py-1 rounded-full text-xs font-semibold bg-violet-50 text-violet-700 border border-violet-200"
+              className="px-3 py-1 rounded-full text-xs font-semibold bg-violet-50 text-violet-700 border border-violet-200 dark:bg-violet-900/30 dark:border-violet-700/50 dark:text-violet-300"
             >
               {tag}
             </span>
@@ -249,7 +249,7 @@ export default function ProjectsSection() {
             <p className="text-xs font-black tracking-[0.3em] text-violet-500 uppercase mb-3">
               Featured Systems
             </p>
-            <h2 className="text-5xl md:text-6xl font-black tracking-tighter text-black leading-tight">
+            <h2 className="text-5xl md:text-6xl font-black tracking-tighter text-black dark:text-white leading-tight">
               What I've{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-purple-500">
                 Built

@@ -76,7 +76,7 @@ export default function HeroSection() {
       >
         {/* Badge */}
         <motion.div variants={itemVariants}>
-          <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-violet-300 bg-violet-50 text-violet-700 text-sm font-semibold tracking-wide shadow-sm shadow-violet-100 mb-8">
+          <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-violet-300 bg-violet-50 dark:bg-violet-900/30 dark:border-violet-700/50 dark:text-violet-300 text-violet-700 text-sm font-semibold tracking-wide shadow-sm shadow-violet-100 mb-8">
             <span className="w-2 h-2 rounded-full bg-violet-500 animate-pulse" />
             BSCS Student · Software Engineer
           </span>
@@ -85,7 +85,7 @@ export default function HeroSection() {
         {/* Headline */}
         <motion.h1
           variants={itemVariants}
-          className="text-6xl sm:text-7xl md:text-8xl lg:text-[96px] font-black tracking-tighter leading-[0.92] text-black mb-8"
+          className="text-6xl sm:text-7xl md:text-8xl lg:text-[96px] font-black tracking-tighter leading-[0.92] text-black dark:text-white mb-8"
         >
           Software Engineer
           <br />
@@ -104,7 +104,7 @@ export default function HeroSection() {
         {/* Sub-copy */}
         <motion.p
           variants={itemVariants}
-          className="text-lg sm:text-xl md:text-2xl text-neutral-500 max-w-2xl mx-auto leading-relaxed mb-14"
+          className="text-lg sm:text-xl md:text-2xl text-neutral-500 dark:text-neutral-400 max-w-2xl mx-auto leading-relaxed mb-14"
         >
           Crafting backend architectures, integrated mobile systems, and
           efficient library solutions — one clean commit at a time.
@@ -119,7 +119,7 @@ export default function HeroSection() {
           <motion.a
             href="#projects"
             id="hero-cta-primary"
-            className="relative group px-10 py-4 rounded-full bg-black text-white font-bold text-base tracking-wide overflow-hidden transition-all duration-300"
+            className="relative group px-10 py-4 rounded-full bg-black dark:bg-white text-white dark:text-black font-bold text-base tracking-wide overflow-hidden transition-all duration-300"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
           >
@@ -138,7 +138,7 @@ export default function HeroSection() {
           <motion.a
             href="#contact"
             id="hero-cta-secondary"
-            className="group px-10 py-4 rounded-full border border-neutral-300 bg-white/80 backdrop-blur-sm text-black font-bold text-base tracking-wide hover:border-violet-400 hover:bg-violet-50/60 transition-all duration-300"
+            className="group px-10 py-4 rounded-full border border-neutral-300 bg-white/80 backdrop-blur-sm text-black font-bold text-base tracking-wide hover:border-violet-400 hover:bg-violet-50/60 dark:bg-neutral-900/80 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800 transition-all duration-300"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
           >
@@ -160,7 +160,7 @@ export default function HeroSection() {
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ repeat: Infinity, duration: 1.6, ease: "easeInOut" }}
-            className="w-5 h-8 rounded-full border-2 border-neutral-300 flex justify-center pt-1.5"
+            className="w-5 h-8 rounded-full border-2 border-neutral-300 dark:border-neutral-600 flex justify-center pt-1.5"
           >
             <div className="w-1.5 h-1.5 rounded-full bg-neutral-400" />
           </motion.div>
