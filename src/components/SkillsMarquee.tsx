@@ -86,7 +86,7 @@ const coreStack = [
 
 function ProficiencyBar({ name, pct, delay }: { name: string; pct: number; delay: number }) {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-60px" });
+  const isInView = useInView(ref, { once: false, margin: "-60px" });
 
   return (
     <div ref={ref} className="flex flex-col gap-1.5">
@@ -110,7 +110,7 @@ function ProficiencyBar({ name, pct, delay }: { name: string; pct: number; delay
 
 export default function SkillsMarquee() {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: false, margin: "-100px" });
 
   const headerVariants = {
     hidden: { opacity: 0, y: 40 },

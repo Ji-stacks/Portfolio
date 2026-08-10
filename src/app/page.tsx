@@ -13,7 +13,7 @@ function FadeUpReveal({ children, delay = 0.3 }: { children: React.ReactNode; de
     <motion.div
       initial={{ opacity: 0, y: 60 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-10%" }}
+      viewport={{ once: false, margin: "-10%" }}
       transition={{ duration: 1.0, ease: [0.22, 1, 0.36, 1], delay }}
     >
       {children}
