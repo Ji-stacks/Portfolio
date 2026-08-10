@@ -170,7 +170,7 @@ function ContactForm() {
 
 export default function ContactFooter() {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const isInView = useInView(ref, { once: false, margin: "-80px" });
 
   const containerVariants = {
     hidden: {},

@@ -213,7 +213,7 @@ function SpotlightCard({
 
 export default function ProjectsSection() {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: false, margin: "-100px" });
 
   const headerVariants = {
     hidden: { opacity: 0, y: 40 },
