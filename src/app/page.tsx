@@ -64,14 +64,45 @@ function SectionDivider() {
     );
 }
 
+// ── Animated Grid ────────────────────────────────────────────────────────────
+function AnimatedGrid() {
+    return (
+        <div 
+            className="pointer-events-none fixed inset-0 z-0"
+            style={{
+                maskImage: "radial-gradient(circle at center, black, transparent 80%)",
+                WebkitMaskImage: "radial-gradient(circle at center, black, transparent 80%)",
+            }}
+        >
+            <motion.div
+                className="absolute inset-0 w-full h-full"
+                style={{
+                    backgroundImage: `
+                        linear-gradient(to right, #8b5cf6 1px, transparent 1px),
+                        linear-gradient(to bottom, #8b5cf6 1px, transparent 1px)
+                    `,
+                    backgroundSize: "50px 50px",
+                    opacity: 0.6, // Increased opacity for darker lines
+                }}
+                animate={{
+                    backgroundPosition: ["0px 0px", "50px 50px"],
+                }}
+                transition={{
+                    repeat: Infinity,
+                    duration: 15,
+                    ease: "linear",
+                }}
+            />
+        </div>
+    );
+}
+
 // ── Main Page ────────────────────────────────────────────────────────────────
 export default function Home() {
     return (
         <main className="min-h-screen bg-white text-black relative">
-            {/* Background Glows (Always visible) */}
-            <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
-                <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-violet-200 blur-[180px] opacity-30" />
-            </div>
+            {/* Animated Grid Background */}
+            <AnimatedGrid />
 
             <Navbar />
 
