@@ -102,9 +102,9 @@ function SpotlightCard({
       y: 0,
       scale: 1,
       transition: {
-        duration: 0.65,
+        duration: 0.85,
         ease: [0.22, 1, 0.36, 1] as const,
-        delay: index * 0.15,
+        delay: 0.25 + index * 0.25,
       },
     },
   };

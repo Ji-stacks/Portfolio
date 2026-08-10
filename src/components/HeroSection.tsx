@@ -19,8 +19,8 @@ export default function HeroSection() {
     hidden: {},
     visible: {
       transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.2,
+        staggerChildren: 0.25,
+        delayChildren: 0.35,
       },
     },
   };
@@ -30,7 +30,7 @@ export default function HeroSection() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const },
+      transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] as const },
     },
   };
 
