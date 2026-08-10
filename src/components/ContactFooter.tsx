@@ -55,7 +55,7 @@ function ContactForm() {
   }
 
   const inputCls =
-    "w-full px-4 py-3 rounded-xl border border-neutral-200 bg-white/90 text-sm text-black placeholder:text-neutral-400 outline-none focus:border-violet-400 focus:ring-2 focus:ring-violet-100 transition-all duration-200 font-medium";
+    "w-full px-4 py-3 rounded-xl border border-neutral-200 bg-white/90 dark:bg-neutral-950/90 dark:border-neutral-800 dark:text-white text-sm text-black placeholder:text-neutral-400 outline-none focus:border-violet-400 focus:ring-2 focus:ring-violet-100 transition-all duration-200 font-medium";
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4" noValidate>
@@ -217,7 +217,7 @@ export default function ContactFooter() {
             <p className="text-xs font-black tracking-[0.3em] text-violet-500 uppercase mb-3">
               Open to Opportunities
             </p>
-            <h2 className="text-5xl md:text-6xl font-black tracking-tighter text-black leading-tight">
+            <h2 className="text-5xl md:text-6xl font-black tracking-tighter text-black dark:text-white leading-tight">
               Let's build something{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-purple-500">
                 extraordinary
@@ -230,7 +230,7 @@ export default function ContactFooter() {
             {/* Left column: info + socials */}
             <motion.div variants={itemVariants} className="lg:col-span-2 flex flex-col gap-8">
               <div>
-                <p className="text-neutral-600 leading-relaxed text-base mb-6">
+                <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed text-base mb-6">
                   I'm currently seeking software engineering internships and entry-level roles. If
                   you're a recruiter or collaborator with an interesting project, let's talk.
                 </p>
@@ -245,7 +245,7 @@ export default function ContactFooter() {
                     <div key={item.label} className="flex items-center gap-3 text-sm">
                       <span className="w-2 h-2 rounded-full bg-violet-400 flex-shrink-0" />
                       <span className="text-neutral-500 font-medium">{item.label}:</span>
-                      <span className="text-black font-semibold">{item.value}</span>
+                      <span className="text-black dark:text-white font-semibold">{item.value}</span>
                     </div>
                   ))}
                 </div>
@@ -259,10 +259,10 @@ export default function ContactFooter() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="GitHub Profile"
-                  className="group flex items-center gap-2.5 px-5 py-2.5 rounded-xl border border-neutral-200 bg-white hover:border-violet-300 hover:bg-violet-50 hover:shadow-md hover:shadow-violet-100 transition-all duration-300"
+                  className="group flex items-center gap-2.5 px-5 py-2.5 rounded-xl border border-neutral-200 bg-white dark:bg-neutral-900 dark:border-neutral-700 dark:text-white hover:border-violet-300 hover:bg-violet-50 hover:shadow-md hover:shadow-violet-100 transition-all duration-300"
                 >
-                  <GitHubIcon className="w-5 h-5 text-black group-hover:text-violet-600 transition-colors duration-300" />
-                  <span className="text-sm font-bold text-black group-hover:text-violet-700 transition-colors duration-300">
+                  <GitHubIcon className="w-5 h-5 text-black dark:text-white group-hover:text-violet-600 transition-colors duration-300" />
+                  <span className="text-sm font-bold text-black dark:text-white group-hover:text-violet-700 transition-colors duration-300">
                     GitHub
                   </span>
                 </a>
@@ -273,23 +273,21 @@ export default function ContactFooter() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn Profile"
-                  className="group flex items-center gap-2.5 px-5 py-2.5 rounded-xl border border-neutral-200 bg-white hover:border-blue-300 hover:bg-blue-50 hover:shadow-md hover:shadow-blue-100 transition-all duration-300"
+                  className="group flex items-center gap-2.5 px-5 py-2.5 rounded-xl border border-neutral-200 bg-white dark:bg-neutral-900 dark:border-neutral-700 dark:text-white hover:border-blue-300 hover:bg-blue-50 hover:shadow-md hover:shadow-blue-100 transition-all duration-300"
                 >
                   <LinkedInIcon className="w-5 h-5 text-[#0A66C2] transition-colors duration-300" />
-                  <span className="text-sm font-bold text-black group-hover:text-blue-700 transition-colors duration-300">
+                  <span className="text-sm font-bold text-black dark:text-white group-hover:text-blue-700 transition-colors duration-300">
                     LinkedIn
                   </span>
                 </a>
               </div>
 
               {/* Resume download */}
-              {/* Resume download */}
-              {/* Resume download (Nuclear Option using JavaScript) */}
               <button
                 id="btn-download-resume"
                 onClick={() => window.open("/Antonio-Tenegra-CV.pdf", "_blank")}
                 type="button"
-                className="group relative inline-flex items-center gap-3 px-6 py-3.5 rounded-xl border-2 border-black bg-white font-bold text-sm text-black tracking-wide overflow-hidden hover:bg-black hover:text-white transition-all duration-300 w-fit"
+                className="group relative inline-flex items-center gap-3 px-6 py-3.5 rounded-xl border-2 border-black bg-white dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-white dark:hover:text-black font-bold text-sm text-black tracking-wide overflow-hidden hover:bg-black hover:text-white transition-all duration-300 w-fit"
               >
                 <DownloadIcon className="w-4 h-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 duration-200" />
                 Download Resume
@@ -302,7 +300,7 @@ export default function ContactFooter() {
             {/* Right column: form */}
             <motion.div
               variants={itemVariants}
-              className="lg:col-span-3 rounded-3xl border border-neutral-200 bg-white/80 backdrop-blur-sm p-8 shadow-sm shadow-violet-100 hover:shadow-violet-200 transition-shadow duration-500"
+              className="lg:col-span-3 rounded-3xl border border-neutral-200 bg-white/80 dark:bg-neutral-900/80 dark:border-neutral-800 backdrop-blur-sm p-8 shadow-sm shadow-violet-100 hover:shadow-violet-200 transition-shadow duration-500"
             >
               <ContactForm />
             </motion.div>
@@ -311,18 +309,18 @@ export default function ContactFooter() {
       </section>
 
       {/* ── Footer ─────────────────────────────────────── */}
-      <footer className="relative border-t border-neutral-100 bg-white/60 backdrop-blur-sm z-10">
+      <footer className="relative border-t border-neutral-100 dark:border-neutral-900 bg-white/60 dark:bg-neutral-950/60 backdrop-blur-sm z-10">
         <div className="max-w-6xl mx-auto px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-neutral-400">
           <p>
-            <span className="font-black text-black tracking-tight">Antonio</span>
+            <span className="font-black text-black dark:text-white tracking-tight">Antonio</span>
             <span className="text-violet-500">.</span>
             {" "}— Software Engineer · BSCS
           </p>
           <p>
             Built with{" "}
-            <span className="text-black font-semibold">Next.js</span>,{" "}
-            <span className="text-black font-semibold">Tailwind CSS</span> &amp;{" "}
-            <span className="text-black font-semibold">Framer Motion</span>
+            <span className="text-black dark:text-white font-semibold">Next.js</span>,{" "}
+            <span className="text-black dark:text-white font-semibold">Tailwind CSS</span> &amp;{" "}
+            <span className="text-black dark:text-white font-semibold">Framer Motion</span>
           </p>
           <p>© {new Date().getFullYear()} Ji. All rights reserved.</p>
         </div>
