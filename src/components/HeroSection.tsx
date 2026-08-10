@@ -59,7 +59,7 @@ export default function HeroSection() {
 
       {/* ── Orbiting ring accents ────────────────────── */}
       <div
-        className="pointer-events-none absolute inset-0 flex items-center justify-center"
+        className="pointer-events-none absolute inset-0 flex items-center justify-center dark:hidden"
         aria-hidden="true"
       >
         <div className="w-[800px] h-[800px] rounded-full border border-violet-100/40 absolute animate-spin-slow" />
