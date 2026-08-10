@@ -8,17 +8,17 @@ import SkillsMarquee from "@/components/SkillsMarquee";
 import ContactFooter from "@/components/ContactFooter";
 
 // ── Bulletproof Scroll Reveal Wrapper ──────────────────────────────────────────
-function FadeUpReveal({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
-    return (
-        <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-10%" }} // Safe margin para ma-trigger agad
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay }}
-        >
-            {children}
-        </motion.div>
-    );
+function FadeUpReveal({ children, delay = 0.3 }: { children: React.ReactNode; delay?: number }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-10%" }}
+      transition={{ duration: 1.0, ease: [0.22, 1, 0.36, 1], delay }}
+    >
+      {children}
+    </motion.div>
+  );
 }
 
 // ── Navigation ───────────────────────────────────────────────────────────────

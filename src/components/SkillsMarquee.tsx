@@ -158,7 +158,7 @@ export default function SkillsMarquee() {
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-        transition={{ duration: 0.65, delay: 0.2 }}
+        transition={{ duration: 0.85, delay: 0.35 }}
         className="flex flex-col gap-4 mb-20"
       >
         <MarqueeTrack />
@@ -170,7 +170,7 @@ export default function SkillsMarquee() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.65, delay: 0.35 }}
+          transition={{ duration: 0.85, delay: 0.55 }}
           className="grid grid-cols-1 sm:grid-cols-2 gap-x-16 gap-y-6"
         >
           {coreStack.map((item, i) => (
@@ -178,7 +178,7 @@ export default function SkillsMarquee() {
               key={item.name}
               name={item.name}
               pct={item.pct}
-              delay={0.05 * i}
+              delay={0.1 * i}
             />
           ))}
         </motion.div>

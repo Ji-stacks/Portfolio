@@ -175,7 +175,7 @@ export default function ContactFooter() {
   const containerVariants = {
     hidden: {},
     visible: {
-      transition: { staggerChildren: 0.12, delayChildren: 0.1 },
+      transition: { staggerChildren: 0.2, delayChildren: 0.3 },
     },
   };
 
@@ -184,7 +184,7 @@ export default function ContactFooter() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] as const },
+      transition: { duration: 0.85, ease: [0.22, 1, 0.36, 1] as const },
     },
   };
 
