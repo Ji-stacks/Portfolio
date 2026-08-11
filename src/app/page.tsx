@@ -24,11 +24,32 @@ function FadeUpReveal({ children, delay = 0.3 }: { children: React.ReactNode; de
 // ── Navigation ───────────────────────────────────────────────────────────────
 function Navbar() {
     const [isDark, setIsDark] = useState(false);
+    const [activeSection, setActiveSection] = useState("");
 
     useEffect(() => {
         if (document.documentElement.classList.contains("dark")) {
             setIsDark(true);
         }
+    }, []);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const sections = ["projects", "skills", "contact"];
+            let current = "";
+            for (const section of sections) {
+                const element = document.getElementById(section);
+                if (element) {
+                    const rect = element.getBoundingClientRect();
+                    // Check if the section is currently in the upper part of the viewport
+                    if (rect.top <= 150 && rect.bottom >= 150) {
+                        current = section;
+                    }
+                }
+            }
+            setActiveSection(current);
+        };
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
     const toggleTheme = () => {
@@ -49,9 +70,30 @@ function Navbar() {
                 </a>
 
                 <div className="hidden sm:flex items-center gap-8 text-sm font-semibold text-neutral-600 dark:text-neutral-300">
-                    <a href="#projects" className="hover:text-violet-600 dark:hover:text-violet-400 transition-colors">Systems</a>
-                    <a href="#skills" className="hover:text-violet-600 dark:hover:text-violet-400 transition-colors">Stack</a>
-                    <a href="#contact" className="hover:text-violet-600 dark:hover:text-violet-400 transition-colors">Contact</a>
+                    {[
+                        { id: "projects", label: "Systems" },
+                        { id: "skills", label: "Stack" },
+                        { id: "contact", label: "Contact" },
+                    ].map((item) => (
+                        <a
+                            key={item.id}
+                            href={`#${item.id}`}
+                            className={`relative py-1 transition-colors ${
+                                activeSection === item.id 
+                                    ? "text-violet-600 dark:text-violet-400" 
+                                    : "hover:text-violet-600 dark:hover:text-violet-400"
+                            }`}
+                        >
+                            {item.label}
+                            {activeSection === item.id && (
+                                <motion.div
+                                    layoutId="navbar-indicator"
+                                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-violet-600 dark:bg-violet-400"
+                                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                                />
+                            )}
+                        </a>
+                    ))}
                 </div>
 
                 <div className="flex items-center gap-3">
