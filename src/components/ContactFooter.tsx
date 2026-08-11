@@ -210,7 +210,7 @@ export default function ContactFooter() {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="relative z-10 max-w-6xl mx-auto"
+          className="relative z-10 w-full px-6 md:px-12"
         >
           {/* Header */}
           <motion.div variants={itemVariants} className="mb-16">
@@ -310,7 +310,7 @@ export default function ContactFooter() {
 
       {/* ── Footer ─────────────────────────────────────── */}
       <footer className="relative border-t border-neutral-100 dark:border-neutral-900 bg-white/60 dark:bg-neutral-950/60 backdrop-blur-sm z-10">
-        <div className="max-w-6xl mx-auto px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-neutral-400">
+        <div className="w-full px-6 md:px-12 py-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-neutral-400">
           <p>
             <span className="font-black text-black dark:text-white tracking-tight">Antonio</span>
             <span className="text-violet-500">.</span>
