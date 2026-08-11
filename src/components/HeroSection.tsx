@@ -72,7 +72,7 @@ export default function HeroSection() {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="relative z-10 flex flex-col items-center text-center max-w-5xl mx-auto"
+        className="relative z-10 flex flex-col items-center text-center w-full px-6 md:px-12"
       >
         {/* Badge */}
         <motion.div variants={itemVariants}>

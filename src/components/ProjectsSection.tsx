@@ -237,7 +237,7 @@ export default function ProjectsSection() {
         aria-hidden="true"
       />
 
-      <div className="max-w-6xl mx-auto">
+      <div className="w-full px-6 md:px-12">
         {/* Section header */}
         <motion.div
           variants={headerVariants}

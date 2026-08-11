@@ -64,7 +64,7 @@ function Navbar() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="fixed top-0 left-0 w-full z-50 bg-white/70 dark:bg-neutral-950/70 backdrop-blur-xl border-b border-neutral-100/80 dark:border-neutral-800 shadow-sm shadow-violet-50 transition-colors duration-300"
         >
-            <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div className="w-full px-6 md:px-12 py-4 flex items-center justify-between">
                 <a href="#" className="text-2xl font-black tracking-tighter text-black dark:text-white hover:text-violet-600 dark:hover:text-violet-400 transition-colors">
                     Ji<span className="text-violet-500">.</span>
                 </a>
