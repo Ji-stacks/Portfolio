@@ -24,11 +24,32 @@ function FadeUpReveal({ children, delay = 0.3 }: { children: React.ReactNode; de
 // ── Navigation ───────────────────────────────────────────────────────────────
 function Navbar() {
     const [isDark, setIsDark] = useState(false);
+    const [activeSection, setActiveSection] = useState("");
 
     useEffect(() => {
         if (document.documentElement.classList.contains("dark")) {
             setIsDark(true);
         }
+    }, []);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const sections = ["projects", "skills", "contact"];
+            let current = "";
+            for (const section of sections) {
+                const element = document.getElementById(section);
+                if (element) {
+                    const rect = element.getBoundingClientRect();
+                    // Check if the section is currently in the upper part of the viewport
+                    if (rect.top <= 150 && rect.bottom >= 150) {
+                        current = section;
+                    }
+                }
+            }
+            setActiveSection(current);
+        };
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
     const toggleTheme = () => {
@@ -49,9 +70,42 @@ function Navbar() {
                 </a>
 
                 <div className="hidden sm:flex items-center gap-8 text-sm font-semibold text-neutral-600 dark:text-neutral-300">
-                    <a href="#projects" className="hover:text-violet-600 dark:hover:text-violet-400 transition-colors">Systems</a>
-                    <a href="#skills" className="hover:text-violet-600 dark:hover:text-violet-400 transition-colors">Stack</a>
-                    <a href="#contact" className="hover:text-violet-600 dark:hover:text-violet-400 transition-colors">Contact</a>
+                    {[
+                        { href: "#projects", id: "projects", label: "Systems" },
+                        { href: "#skills", id: "skills", label: "Stack" },
+                        { href: "#contact", id: "contact", label: "Contact" },
+                    ].map((link) => {
+                        const isActive = activeSection === link.id;
+                        return (
+                            <motion.a
+                                key={link.id}
+                                href={link.href}
+                                animate={{
+                                    color: isActive 
+                                        ? (isDark ? "#a78bfa" : "#7c3aed") // violet-400 (dark) or violet-600 (light)
+                                        : (isDark ? "#d4d4d8" : "#52525b") // neutral-300 (dark) or neutral-600 (light)
+                                }}
+                                transition={{ duration: 0.3 }}
+                                className="relative px-3 py-1.5 font-semibold text-sm transition-colors hover:text-violet-500 dark:hover:text-violet-400"
+                            >
+                                {link.label}
+                                {isActive && (
+                                    <motion.div
+                                        layoutId="active-nav-shade"
+                                        initial={{ opacity: 0, scale: 0.8 }}
+                                        animate={{ opacity: 1, scale: 1 }}
+                                        transition={{
+                                            type: "spring",
+                                            stiffness: 350,
+                                            damping: 30,
+                                            opacity: { duration: 0.2 }
+                                        }}
+                                        className="absolute inset-0 z-[-1] rounded-full bg-violet-100 dark:bg-violet-900/30 border border-violet-200 dark:border-violet-700/50 shadow-[0_0_12px_rgba(139,92,246,0.15)]"
+                                    />
+                                )}
+                            </motion.a>
+                        );
+                    })}
                 </div>
 
                 <div className="flex items-center gap-3">
