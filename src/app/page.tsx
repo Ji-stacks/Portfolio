@@ -22,15 +22,8 @@ function FadeUpReveal({ children, delay = 0.3 }: { children: React.ReactNode; de
 }
 
 // ── Navigation ───────────────────────────────────────────────────────────────
-function Navbar() {
-    const [isDark, setIsDark] = useState(false);
+function Navbar({ isDark, toggleTheme }: { isDark: boolean; toggleTheme: () => void }) {
     const [activeSection, setActiveSection] = useState("");
-
-    useEffect(() => {
-        if (document.documentElement.classList.contains("dark")) {
-            setIsDark(true);
-        }
-    }, []);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -51,11 +44,6 @@ function Navbar() {
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
-
-    const toggleTheme = () => {
-        setIsDark((prev) => !prev);
-        document.documentElement.classList.toggle("dark");
-    };
 
     return (
         <motion.nav
@@ -186,12 +174,37 @@ function AnimatedGrid() {
 
 // ── Main Page ────────────────────────────────────────────────────────────────
 export default function Home() {
+    const [isDark, setIsDark] = useState(false);
+
+    useEffect(() => {
+        if (document.documentElement.classList.contains("dark")) {
+            setIsDark(true);
+        }
+    }, []);
+
+    const toggleTheme = () => {
+        setIsDark(!isDark);
+        document.documentElement.classList.toggle("dark");
+    };
+
     return (
-        <main className="min-h-screen bg-white dark:bg-neutral-950 text-black dark:text-white relative transition-colors duration-500">
+        <main className="min-h-screen bg-white text-black dark:text-white relative transition-colors duration-500">
+            {/* Dark Mode Clip-Path Background */}
+            <motion.div
+                className="pointer-events-none fixed inset-0 z-0 bg-neutral-950"
+                initial={false}
+                animate={{
+                    clipPath: isDark
+                        ? "circle(150% at 85% 5%)"
+                        : "circle(0% at 85% 5%)"
+                }}
+                transition={{ duration: 0.7, ease: "easeInOut" }}
+            />
+
             {/* Animated Grid Background */}
             <AnimatedGrid />
 
-            <Navbar />
+            <Navbar isDark={isDark} toggleTheme={toggleTheme} />
 
             <div className="relative z-10">
                 <HeroSection />
