@@ -316,12 +316,7 @@ export default function ContactFooter() {
             <span className="text-violet-500">.</span>
             {" "}— Software Engineer · BSCS
           </p>
-          <p>
-            Built with{" "}
-            <span className="text-black dark:text-white font-semibold">Next.js</span>,{" "}
-            <span className="text-black dark:text-white font-semibold">Tailwind CSS</span> &amp;{" "}
-            <span className="text-black dark:text-white font-semibold">Framer Motion</span>
-          </p>
+
           <p>© {new Date().getFullYear()} Ji. All rights reserved.</p>
         </div>
       </footer>
